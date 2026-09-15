@@ -1,13 +1,52 @@
 # Private Assistant AI
 
+**A local-first, activity-aware Windows assistant with voice wake and reminders.**
+
+**本機優先的 Windows 桌面助理，支援語音喚醒、提醒與活動情境感知。**
+
 English | [繁體中文](README.zh-TW.md)
 
-**A Windows local-first proactive desktop assistant.**
-Version: `v0.1.0-alpha` · Experimental
+**Windows 64-bit · v0.1.0-alpha · Experimental pre-release**
 
-Private Assistant AI helps you manage reminders, understand your desktop activity, and notice when you may be stuck repeating the same steps. Voice commands, activity tracking, lightweight learning, and rule-based suggestions run on your computer. Core features require no API key, paid AI subscription, or AI account.
+### [Download for Windows (ZIP)](https://github.com/esther0510/private-assistant-ai/releases/download/v0.1.0-alpha/PrivateAssistantAI_v0.1.0-alpha_windows-x64.zip) · [Latest Alpha Release](https://github.com/esther0510/private-assistant-ai/releases/tag/v0.1.0-alpha)
 
-**Language support:** the current interface and reminder grammar are primarily Traditional Chinese. This English README makes the project accessible to international readers; it does not imply a fully translated interface or complete English command support.
+Extract the whole ZIP, then open **PrivateAssistantAI.exe**. No Python installation or API key required. Voice models download on first use.
+
+The interface and reminder commands are primarily **Traditional Chinese**. English documentation is available; full English command support is not yet available.
+
+## At a glance
+
+- **Reminders:** add, edit, delete and undo using text or voice.
+- **Voice wake:** call your assistant's name, then speak a command; speech processing runs locally.
+- **Activity-aware assistance:** use app/window context and idle state for reminders and conservative suggestions.
+- **App and game launching:** request a launch, with selection when the target is ambiguous.
+- **Local-first:** core features work without an AI account; cloud AI analysis is optional and off by default.
+
+## Screenshots / Demo
+
+![Private Assistant AI alpha: clean start with an empty reminder list](docs/images/alpha-clean-start.png)
+
+Actual app window in a clean test profile: reminders are running, monitoring is paused, and no personal reminders or account data are loaded. The interface is primarily Traditional Chinese. This screenshot shows the empty starting state.
+
+Demo coming soon.
+
+## Download
+
+Use the [Windows x64 ZIP](https://github.com/esther0510/private-assistant-ai/releases/download/v0.1.0-alpha/PrivateAssistantAI_v0.1.0-alpha_windows-x64.zip) from the [v0.1.0-alpha pre-release](https://github.com/esther0510/private-assistant-ai/releases/tag/v0.1.0-alpha). GitHub's automatically generated **Source code** archives are for developers and do not contain the executable.
+
+1. Extract all files to a writable folder. Keep **PrivateAssistantAI.exe** and **_internal/** together.
+2. Open **PrivateAssistantAI.exe**, read the first-run notice, and wait for the main window.
+3. Follow [START_HERE_EN.txt](START_HERE_EN.txt) or [繁中開始說明](START_HERE.txt).
+
+The app starts monitoring by default. Pause monitoring or use privacy mode when needed. Closing the window leaves it in the system tray; use the tray's **離開 (Exit)** command to quit.
+
+The package is unsigned. First voice use needs internet access to GitHub and Hugging Face for model downloads; allow several GB of free space. Wake-word and Whisper speech models are not bundled in the ZIP or source repository; a small VAD (voice activity detection) model is included with the voice library. After download, voice inference is local. See [First model download](#first-model-download).
+
+## Quick start
+
+Press **Ctrl+Alt+A**, enter `10分鐘後提醒我喝水`, and press Enter. Check the displayed time. You can also enter commands in the main window.
+
+For voice, open **設定 > 監督**, enable voice, choose a microphone and assistant name, then wait for **待機中**. Say the name, wait for the listening indicator, and speak the reminder. See [First use](#first-use) for edit/delete examples.
 
 ## Features
 
@@ -47,7 +86,7 @@ FPS, frametime, accuracy, and timing statistics require appropriate supplied dat
 
 ## Install from source
 
-The current development setup uses **64-bit Windows and Python 3.12**. Download and extract the source, or clone it once a public repository is available. Open PowerShell in the project folder:
+The current development setup uses **64-bit Windows and Python 3.12**. Clone [the repository](https://github.com/esther0510/private-assistant-ai) or download and extract the source. Open PowerShell in the project folder:
 
 ```powershell
 python -m venv .venv
@@ -68,7 +107,7 @@ Start the app:
 
 For quiet startup, double-click `start_assistant.vbs`, which uses the local virtual environment when available. `run_silent.pyw` is another entry point when your Windows Python association uses an environment with the dependencies installed.
 
-The source repository does not include an executable package. `START.bat` expects a separately supplied `tools/uv/uv.exe`, which is excluded from Git. [START_HERE.txt](START_HERE.txt) remains the Traditional Chinese guide for the separate friend testing package.
+For the ready-to-run executable, use the [Windows release](#download). The source archive is separate; `START.bat` belongs to the older bootstrap distribution and expects an untracked `tools/uv/uv.exe`. Source users should follow the Python commands above.
 
 ### First model download
 
@@ -131,13 +170,7 @@ Settings are edited in the app. `.env.example` is documentation only; the app do
 
 ### Updates
 
-Update checks are low-frequency, metadata-only, and can be disabled. The release URL remains a placeholder until a public repository exists:
-
-```text
-https://api.github.com/repos/<owner>/<repo>/releases/latest
-```
-
-A future maintainer should set the real URL in `personal_ai_assistant/updates.py` and the `update_check_url` setting before publishing. The app never auto-installs updates.
+In-app update discovery is not configured in this alpha. Download updates manually from [GitHub Releases](https://github.com/esther0510/private-assistant-ai/releases/tag/v0.1.0-alpha); the app never auto-installs them.
 
 ## Known limitations and safety
 
@@ -165,8 +198,12 @@ The privacy audit scans the Git index, including all tracked files. Stage intend
 
 Please omit private reminders, window titles, activity history, databases, credentials, and API keys from issues, logs, screenshots, and reproduction files. See [Security](SECURITY.md) for security reporting.
 
-Potential next steps include guided first-run setup, stronger app/window exclusions, local activity review and deletion controls, more reminder language/locale support, richer model adapters, packaged Windows releases, and expanded privacy/migration coverage.
+Potential next steps include guided first-run setup, stronger app/window exclusions, local activity review and deletion controls, more reminder language/locale support, richer model adapters, more Windows packaging options, and expanded privacy/migration coverage.
 
 ## License
 
 MIT. See [LICENSE](LICENSE). Downloaded models and dependencies retain their own licenses.
+
+## Languages
+
+English | [繁體中文](README.zh-TW.md)

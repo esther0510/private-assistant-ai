@@ -1,13 +1,52 @@
 # Private Assistant AI
 
+**本機優先的 Windows 桌面助理，支援語音喚醒、提醒與活動情境感知。**
+
+**A local-first, activity-aware Windows assistant with voice wake and reminders.**
+
 [English](README.md) | 繁體中文
 
-**Windows 本機優先、可主動提供提醒的桌面助理。**
-版本：`v0.1.0-alpha` · 實驗性版本
+**Windows 64 位元 · v0.1.0-alpha · 實驗性預發行版**
 
-Private Assistant AI 協助管理提醒、整理電腦活動情境，並在可能反覆卡住時提供提示。語音指令、活動追蹤、輕量學習與規則式建議都在自己的電腦上執行；核心功能不需要 API key、付費 AI 訂閱或 AI 帳號。
+### [下載 Windows 測試版 ZIP](https://github.com/esther0510/private-assistant-ai/releases/download/v0.1.0-alpha/PrivateAssistantAI_v0.1.0-alpha_windows-x64.zip) · [最新 Alpha Release](https://github.com/esther0510/private-assistant-ai/releases/tag/v0.1.0-alpha)
 
-目前介面與提醒語法以繁體中文為主。英文 README 是供國際讀者了解專案的文件，不代表介面或英文指令已全面支援。本文件整理現有功能與繁中操作說明。
+完整解壓後開啟 **PrivateAssistantAI.exe**，不必安裝 Python，也不需要 API key。語音模型會在首次使用時下載。
+
+目前介面與提醒指令以**繁體中文**為主；提供英文文件，但尚未完整支援英文指令。
+
+## 核心特色
+
+- **提醒管理：**用文字或語音新增、修改、刪除及復原提醒。
+- **語音喚醒：**喊助理名字，再說指令；語音辨識在本機執行。
+- **活動情境感知：**根據程式／視窗及閒置狀態，提供提醒與保守建議。
+- **啟動 App／遊戲：**提出啟動要求，目標不明時先選擇。
+- **本機優先：**核心功能不需要 AI 帳號；雲端 API 分析為選用且預設關閉。
+
+## 截圖／Demo
+
+![Private Assistant AI Alpha 乾淨啟動畫面：提醒清單空白](docs/images/alpha-clean-start.png)
+
+實際程式在獨立測試資料下的空白啟動畫面：提醒服務運作中、活動監督已暫停，未載入私人提醒或帳號資料。介面以繁體中文為主。
+
+Demo coming soon。短動圖展示留待後續補上。
+
+## 下載
+
+請從 [v0.1.0-alpha 預發行頁面](https://github.com/esther0510/private-assistant-ai/releases/tag/v0.1.0-alpha)下載 [Windows x64 ZIP](https://github.com/esther0510/private-assistant-ai/releases/download/v0.1.0-alpha/PrivateAssistantAI_v0.1.0-alpha_windows-x64.zip)。GitHub 自動產生的 **Source code** 壓縮檔是原始碼，不含 EXE。
+
+1. 完整解壓到有寫入權限的資料夾，保留 **PrivateAssistantAI.exe** 與旁邊的 **_internal/**。
+2. 開啟 **PrivateAssistantAI.exe**，閱讀首次使用提示並等主視窗出現。
+3. 詳見 [START_HERE.txt](START_HERE.txt) 或 [English guide](START_HERE_EN.txt)。
+
+預設會開始活動監督；需要時可暫停監督或使用隱私模式。關閉視窗只是縮到系統匣，完全退出請在系統匣選「離開」。
+
+這是未簽章測試包。首次使用語音需連線 GitHub 與 Hugging Face 下載模型，請預留數 GB 空間。ZIP 與原始碼庫不含大型喚醒／Whisper 辨識模型；語音套件內建必要的小型 VAD（語音活動偵測）模型。下載後在本機辨識。
+
+## 快速開始
+
+按 **Ctrl+Alt+A**，輸入 `10分鐘後提醒我喝水` 並按 Enter，確認畫面時間。也可在主視窗輸入指令。
+
+語音：到 **設定 > 監督** 啟用語音、選麥克風與助理名字。等「**待機中**」後喊名字，看到正在聽的提示再說指令。修改／刪除範例見下方首次使用說明。
 
 ## 功能
 
@@ -47,7 +86,7 @@ FPS、frametime、準度及 timing 統計需要對應的外部資料或手填結
 
 ## 從原始碼安裝
 
-目前開發環境使用 **Windows 64 位元與 Python 3.12**。下載並解壓原始碼，或在公開 repo 建立後複製專案，在專案資料夾開啟 PowerShell：
+目前開發環境使用 **Windows 64 位元與 Python 3.12**。複製 [GitHub 專案](https://github.com/esther0510/private-assistant-ai) 或下載並解壓原始碼，在專案資料夾開啟 PowerShell：
 
 ```powershell
 python -m venv .venv
@@ -68,7 +107,7 @@ python -m venv .venv
 
 需要無命令視窗啟動時，可雙擊 `start_assistant.vbs`，它會優先使用專案的虛擬環境。若 Windows 的 Python 檔案關聯指向已安裝相依套件的環境，也可使用 `run_silent.pyw`。
 
-原始碼 repo 不包含執行檔測試包。`START.bat` 需要另行提供的 `tools/uv/uv.exe`，該檔案不納入 Git。[START_HERE.txt](START_HERE.txt) 繼續提供獨立朋友測試包的繁中使用指南。
+要直接執行，請使用上方的 [Windows 測試版](#下載)。原始碼與 EXE 下載分開；`START.bat` 屬於較舊的啟動安裝包，需要未納入 Git 的 `tools/uv/uv.exe`。原始碼使用者請依照上述 Python 指令安裝。
 
 ### 第一次模型下載
 
@@ -131,13 +170,7 @@ Windows 資料庫位於原始碼資料夾外的 `%LOCALAPPDATA%\PrivateAssistant
 
 ### 更新檢查
 
-更新檢查頻率低、只查版本資訊，也可關閉。公開 repo 尚未建立前，更新網址維持 placeholder：
-
-```text
-https://api.github.com/repos/<owner>/<repo>/releases/latest
-```
-
-日後發布前，維護者應更新 `personal_ai_assistant/updates.py` 與 `update_check_url` 設定。程式不會自動安裝更新。
+此 Alpha 尚未設定程式內更新查詢。請手動從 [GitHub Releases](https://github.com/esther0510/private-assistant-ai/releases/tag/v0.1.0-alpha)下載更新；程式不會自動安裝。
 
 ## 已知限制與安全注意事項
 
@@ -170,3 +203,7 @@ python scripts/privacy_audit.py --git-index
 ## 授權
 
 MIT，詳見 [LICENSE](LICENSE)。下載的模型與相依套件適用各自的授權。
+
+## 語言
+
+[English](README.md) | 繁體中文

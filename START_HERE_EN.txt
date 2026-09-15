@@ -1,0 +1,41 @@
+﻿Private Assistant AI v0.1.0-alpha | Windows x64
+
+START
+1. Download the Windows ZIP from https://github.com/esther0510/private-assistant-ai/releases/tag/v0.1.0-alpha
+2. Extract ALL files to a writable folder. Do not run inside the ZIP.
+3. Open PrivateAssistantAI.exe. Keep the _internal folder beside it.
+4. No Python installation, API key, paid subscription or AI account is needed for core features.
+5. Read the first-run notice. Monitoring starts by default; pause it or use privacy mode when needed.
+
+TRY A REMINDER
+The interface and command grammar are primarily Traditional Chinese.
+Press Ctrl+Alt+A, type: 10分鐘後提醒我喝水
+Press Enter, then verify the displayed time (drink water in 10 minutes).
+You can also use the main window. Reminder list buttons: 修改 = Edit, 刪除 = Delete, 復原上次操作 = Undo.
+Always verify dates, times and selected targets. Sleep, shutdown or exiting can prevent timely reminders.
+
+VOICE
+Open 設定 > 監督 (Settings > Monitoring), enable voice, choose a microphone and assistant name.
+Voice libraries and a small VAD model are bundled; wake-word and Whisper speech models are not. First use downloads wake models from GitHub and Whisper small from Hugging Face. Allow several GB of space and several minutes or longer.
+Wait for 待機中 (Standby), say the assistant name, wait for the listening indicator, then say your command.
+Use microphone/wake tests at your normal distance. CPU is supported; no NVIDIA GPU is required.
+Recognition and wake detection can be wrong. Use text when voice is unreliable. Check microphone permissions in Windows if needed.
+Privacy mode or disabling voice stops microphone capture. Voice may remain active while the app is in the tray.
+
+EXIT
+Closing the window hides it in the system tray. Right-click the tray icon and select 離開 (Exit) to stop the app, voice and reminders completely.
+
+PRIVACY
+This package contains no provider's personal profile, reminders, API key or calibration.
+Normal startup stores your data in %LOCALAPPDATA%\PrivateAssistantAI; an existing profile is reused.
+Whisper uses its own local model cache. Voice inference is local after downloads.
+Optional Advisor API is off by default; enabling it can send analysis context to your chosen provider. AI Handoff copies a prompt and opens a website; review before sending it yourself.
+Never share your database, credentials, private window titles or reminder history in a bug report.
+
+TROUBLESHOOTING / LIMITS
+This is an unsigned Windows-only Alpha. Hardware, microphone, fullscreen games, hotkeys, DPI and security software can affect compatibility.
+If DLLs are missing, re-extract the entire ZIP and check that _internal is intact. Verify the release source and SHA256 before handling Windows warnings; do not disable antivirus.
+Model download failed: check connectivity to GitHub and Hugging Face, then use install/retry in voice settings. Text reminders remain available.
+English UI/command coverage is limited. Suggestions can misjudge your activity. Keep another method for important reminders.
+In-app update discovery is not configured: download updates manually from the release page.
+Report a reproducible problem at https://github.com/esther0510/private-assistant-ai/issues

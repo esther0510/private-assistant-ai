@@ -21,12 +21,12 @@ This is an experimental Windows-only alpha. Core reminders work local-first with
 - AI Handoff opens a website and copies a prompt; it does not call ChatGPT, Claude, Gemini, or any API directly.
 - First-run setup is deliberately lightweight rather than a step-by-step wizard.
 
-## Release Blockers To Clear Before Public GitHub Release
+## Public Alpha Packaging / Remaining Verification
 
-- Set the real GitHub Releases API URL in `personal_ai_assistant/updates.py`.
-- Review the local Git history and publication audit before the first push or tag.
-- Confirm the uv/bootstrap ZIP on a clean Windows machine.
-- Review generated release ZIP output to ensure it contains no SQLite DB, logs, screenshots, `.env`, or user profile data.
+- Download the Windows x64 EXE ZIP from [v0.1.0-alpha](https://github.com/esther0510/private-assistant-ai/releases/tag/v0.1.0-alpha). The older uv/bootstrap ZIP is not the public release artifact.
+- In-app update discovery remains unconfigured. Download updates manually from GitHub Releases; this packaging release does not change update logic.
+- Clean-profile smoke validation on the maintainer's Windows machine is not equivalent to testing another physical computer or a fresh Windows VM. Microphone, antivirus and hardware compatibility still need external testing.
+- The executable is unsigned, and first voice use requires model downloads. See the release notes for the scope of lightweight verification.
 
 ## 本機 KWS 語音喚醒
 

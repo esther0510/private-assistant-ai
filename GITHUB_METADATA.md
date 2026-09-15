@@ -1,10 +1,10 @@
 # Suggested GitHub Metadata
 
-For the future public repository. These are suggestions only; no remote repository has been created or configured.
+Public repository: https://github.com/esther0510/private-assistant-ai
 
 ## Repository description / About description
 
-Local-first Windows desktop assistant with voice wake, reminders, activity-aware suggestions, app/game launching, and rhythm game diagnostics. Alpha.
+Local-first Windows assistant with voice wake, reminders and activity-aware suggestions. Alpha. 本機優先的 Windows 語音與提醒助理。
 
 ## Topics
 
@@ -13,7 +13,7 @@ Local-first Windows desktop assistant with voice wake, reminders, activity-aware
 ## About fields
 
 - Description: use the repository description above.
-- Website: leave blank until a public project website or documentation URL exists.
+- Website: https://github.com/esther0510/private-assistant-ai/releases/tag/v0.1.0-alpha
 - Topics: use the suggested topics above.
 - Release label: `v0.1.0-alpha` (experimental).
 
