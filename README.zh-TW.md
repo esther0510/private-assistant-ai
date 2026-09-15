@@ -28,8 +28,6 @@
 
 實際程式在獨立測試資料下的空白啟動畫面：提醒服務運作中、活動監督已暫停，未載入私人提醒或帳號資料。介面以繁體中文為主。
 
-Demo coming soon。短動圖展示留待後續補上。
-
 ## 下載
 
 請從 [v0.1.0-alpha 預發行頁面](https://github.com/esther0510/private-assistant-ai/releases/tag/v0.1.0-alpha)下載 [Windows x64 ZIP](https://github.com/esther0510/private-assistant-ai/releases/download/v0.1.0-alpha/PrivateAssistantAI_v0.1.0-alpha_windows-x64.zip)。GitHub 自動產生的 **Source code** 壓縮檔是原始碼，不含 EXE。
