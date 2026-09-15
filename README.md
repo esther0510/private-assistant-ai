@@ -24,7 +24,7 @@ The interface and reminder commands are primarily **Traditional Chinese**. Engli
 
 ## Screenshots / Demo
 
-![Private Assistant AI alpha: clean start with an empty reminder list](docs/images/alpha-clean-start.png)
+![Private Assistant AI alpha: clean start with an empty reminder list](docs/images/alpha-clean-start-v2.png)
 
 Actual app window in a clean test profile: reminders are running, monitoring is paused, and no personal reminders or account data are loaded. The interface is primarily Traditional Chinese. This screenshot shows the empty starting state.
 
