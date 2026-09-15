@@ -1,0 +1,10 @@
+faster-whisper
+sounddevice
+webrtcvad-wheels==2.0.14
+
+numpy>=1.26
+
+sherpa-onnx==1.13.8
+pypinyin==0.55.0
+opencc-python-reimplemented==0.1.7
+sentencepiece>=0.2,<0.3
