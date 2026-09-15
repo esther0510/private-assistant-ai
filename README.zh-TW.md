@@ -24,7 +24,7 @@
 
 ## 截圖／Demo
 
-![Private Assistant AI Alpha 乾淨啟動畫面：提醒清單空白](docs/images/alpha-clean-start.png)
+![Private Assistant AI Alpha 乾淨啟動畫面：提醒清單空白](docs/images/alpha-clean-start-v2.png)
 
 實際程式在獨立測試資料下的空白啟動畫面：提醒服務運作中、活動監督已暫停，未載入私人提醒或帳號資料。介面以繁體中文為主。
 
